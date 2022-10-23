@@ -254,13 +254,13 @@ var _ = Describe("Table", func() {
 
 		It("supports multi-byte French runes", func() {
 			table = NewTable([]string{"", "", "", "", "", ""})
-			table.Add("nom", "état demandé", "instances", "mémoire", "disque", "adresses URL")
+			table.Add("nom", "état demandé", "instances", "mémoire", "disque", "addresses URL")
 			table.Add("app-name", "stopped", "0/1", "1G", "1G", "app-name.example.com")
 			table.PrintTo(outputs)
 			s := strings.Split(outputs.String(), "\n")
 
 			Expect(s).To(ContainSubstrings(
-				[]string{"nom        état demandé   instances   mémoire   disque   adresses URL"},
+				[]string{"nom        état demandé   instances   mémoire   disque   addresses URL"},
 				[]string{"app-name   stopped        0/1         1G        1G       app-name.example.com"},
 			))
 		})

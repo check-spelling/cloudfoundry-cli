@@ -686,7 +686,7 @@ var _ = Describe("install actions", func() {
 			installErr = actor.InstallPluginFromPath(pluginPath, plugin)
 		})
 
-		When("an error is encountered copying the plugin to the plugin directory", func() {
+		When("an error is encountered copying the pluginto the plugin directory", func() {
 			BeforeEach(func() {
 				fakeConfig.PluginHomeReturns(pluginPath)
 			})

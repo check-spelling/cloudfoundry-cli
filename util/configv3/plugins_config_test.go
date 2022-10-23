@@ -195,7 +195,7 @@ var _ = Describe("PluginsConfig", func() {
 				Expect(err).ToNot(HaveOccurred())
 			})
 
-			It("adds the plugin to the config", func() {
+			It("adds the pluginto the config", func() {
 				config.AddPlugin(Plugin{
 					Name:     "plugin-2",
 					Location: "/over-there",
@@ -308,7 +308,7 @@ var _ = Describe("PluginsConfig", func() {
 				setPluginConfig(pluginsPath, rawConfig)
 			})
 
-			It("returns the pluging sorted by name", func() {
+			It("returns the plugins sorted by name", func() {
 				config, err := LoadConfig()
 				Expect(err).ToNot(HaveOccurred())
 				Expect(config.Plugins()).To(Equal([]Plugin{
