@@ -30,7 +30,7 @@ var _ = Describe("curl Command", func() {
 		HTTPMethod            string
 		HTTPData              flag.PathWithAt
 		FailOnHTTPError       bool
-		IncludeReponseHeaders bool
+		IncludeResponseHeaders bool
 		OutputFile            flag.Path
 		executeErr            error
 	)
@@ -54,7 +54,7 @@ var _ = Describe("curl Command", func() {
 			HTTPMethod:            HTTPMethod,
 			HTTPData:              HTTPData,
 			FailOnHTTPError:       FailOnHTTPError,
-			IncludeReponseHeaders: IncludeReponseHeaders,
+			IncludeResponseHeaders: IncludeResponseHeaders,
 			OutputFile:            OutputFile,
 		}
 
@@ -128,7 +128,7 @@ var _ = Describe("curl Command", func() {
 
 		When("the include-response-headers flag is set", func() {
 			BeforeEach(func() {
-				cmd.IncludeReponseHeaders = true
+				cmd.IncludeResponseHeaders = true
 			})
 
 			It("includes the headers in the output", func() {
