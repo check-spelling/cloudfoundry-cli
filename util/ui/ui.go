@@ -74,10 +74,10 @@ type UI struct {
 	In io.Reader
 	// Out is the output buffer
 	Out io.Writer
-	// OutForInteration is the output buffer when working with go-interact. When
+	// OutForInteraction is the output buffer when working with go-interact. When
 	// working with Windows, color.Output does not work with TTY detection. So
 	// real STDOUT is required or go-interact will not properly work.
-	OutForInteration io.Writer
+	OutForInteraction io.Writer
 	// Err is the error buffer
 	Err io.Writer
 
@@ -111,7 +111,7 @@ func NewUI(config Config) (*UI, error) {
 	return &UI{
 		In:               os.Stdin,
 		Out:              color.Output,
-		OutForInteration: os.Stdout,
+		OutForInteraction: os.Stdout,
 		Err:              os.Stderr,
 		colorEnabled:     config.ColorEnabled(),
 		translate:        translateFunc,
@@ -137,7 +137,7 @@ func NewPluginUI(config Config, outBuffer io.Writer, errBuffer io.Writer) (*UI, 
 	return &UI{
 		In:               nil,
 		Out:              outBuffer,
-		OutForInteration: outBuffer,
+		OutForInteraction: outBuffer,
 		Err:              errBuffer,
 		colorEnabled:     configv3.ColorDisabled,
 		translate:        translateFunc,
@@ -162,7 +162,7 @@ func NewTestUI(in io.Reader, out io.Writer, err io.Writer) *UI {
 	return &UI{
 		In:               in,
 		Out:              out,
-		OutForInteration: out,
+		OutForInteraction: out,
 		Err:              err,
 		Exiter:           realExiter,
 		colorEnabled:     configv3.ColorDisabled,
