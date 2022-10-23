@@ -88,7 +88,7 @@ func (cmd PluginsCommand) displayOutdatedPlugins() error {
 	cmd.UI.DisplayTableWithHeader("", table, ui.DefaultTableSpacePadding)
 
 	cmd.UI.DisplayNewline()
-	cmd.UI.DisplayText("Use '{{.BinaryName}} install-plugin' to update a plugin to the latest version.", map[string]interface{}{
+	cmd.UI.DisplayText("Use '{{.BinaryName}} install-plugin' to update a pluginto the latest version.", map[string]interface{}{
 		"BinaryName": cmd.Config.BinaryName(),
 	})
 

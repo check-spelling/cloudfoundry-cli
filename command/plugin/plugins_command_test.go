@@ -213,7 +213,7 @@ var _ = Describe("plugins Command", func() {
 
 						Expect(testUI.Out).To(Say("Searching repo-1, repo-2 for newer versions of installed plugins..."))
 						Expect(testUI.Out).To(Say(""))
-						Expect(testUI.Out).To(Say(`plugin\s+version\s+latest version\n\nUse 'faceman install-plugin' to update a plugin to the latest version\.`))
+						Expect(testUI.Out).To(Say(`plugin\s+version\s+latest version\n\nUse 'faceman install-plugin' to update a pluginto the latest version\.`))
 
 						Expect(fakeActor.GetOutdatedPluginsCallCount()).To(Equal(1))
 					})
@@ -238,7 +238,7 @@ var _ = Describe("plugins Command", func() {
 						Expect(testUI.Out).To(Say(`plugin-1\s+1.0.0\s+2.0.0`))
 						Expect(testUI.Out).To(Say(`plugin-2\s+2.0.0\s+3.0.0`))
 						Expect(testUI.Out).To(Say(""))
-						Expect(testUI.Out).To(Say(`Use 'faceman install-plugin' to update a plugin to the latest version\.`))
+						Expect(testUI.Out).To(Say(`Use 'faceman install-plugin' to update a pluginto the latest version\.`))
 					})
 				})
 			})

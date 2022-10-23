@@ -539,7 +539,7 @@ jobs:
         security create-keychain -p "$SIGNING_KEYCHAIN_PASSPHRASE" "$KEYCHAIN_PATH"
         # trap "security delete-keychain $KEYCHAIN_PATH" 0
 
-        # Append build keychain to the user domain
+        # Append build keychainto the user domain
         security list-keychains -d user -s "$KEYCHAIN_PATH" $(security list-keychains -d user | sed s/\"//g)
 
         # Remove relock timeout
